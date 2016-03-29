@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-supersonicads-mediation-nativex" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-plugin-supersonicads-mediation-nativex</name>
+    <description>Add support for NativeX in supersonic ads mediation platform for a Cordova app</description>
+
+    <engines>
+        <engine name="cordova-android" version=">=4.0.0" />
+        <engine name="cordova-plugman" version=">=4.2.0" />
+    </engines>
+
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.nativex.monetization.activities.InterstitialActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+            <activity android:name="com.nativex.videoplayer.VideoActivity" android:configChanges="orientation|screenSize" />
+        </config-file>
+
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/android/gson-2.3.1.jar" target-dir="libs/" />
+    </platform>
+</plugin>
